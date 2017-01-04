@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TestXFBugs.App">
+	<Application.Resources>
+		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+			<Color x:Key="GreyDark">#737373</Color>
+			<Color x:Key="BackMainFaded">#ececec</Color>
+
+			<!--  Constants for Elegant Icon Fonts  -->
+			<x:String x:Key="IconProfile">&#xe08a;</x:String>
+	        <x:String x:Key="IconInfo">&#xe060;</x:String>
+	            
+			<OnPlatform x:Key="ElegantIcons" x:TypeArguments="x:String">
+	                <OnPlatform.iOS>ElegantIcons</OnPlatform.iOS>
+	                <OnPlatform.WinPhone>/Assets/Fonts/ElegantIcons.ttf#ElegantIcons</OnPlatform.WinPhone>
+	                <OnPlatform.Android>ElegantIcons.ttf</OnPlatform.Android>
+	            </OnPlatform>
+			
+			<Style x:Key="InfoIconText" TargetType="Label">
+	                <Setter Property="TextColor" Value="{StaticResource GreyDark}" />
+	                <Setter Property="FontFamily" Value="{StaticResource ElegantIcons}" />
+	        </Style>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>
