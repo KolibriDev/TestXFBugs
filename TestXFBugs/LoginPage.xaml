@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-		xmlns:local="clr-namespace:TestXFBugs"
 		xmlns:ctrls="clr-namespace:TestXFBugs.Controls;assembly=TestXFBugs"
-		x:Class="TestXFBugs.LoginPage">
-
-	<ContentPage.Resources>
+		x:Class="TestXFBugs.LoginPage"
+    BackgroundColor="{StaticResource BackMainLight}"
+    Title="Login">
+  <ContentPage.Resources>
     <ResourceDictionary>
       <OnPlatform
 					x:Key="TextMargin"

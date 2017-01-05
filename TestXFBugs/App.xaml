@@ -4,6 +4,7 @@
 		<!-- Application resource dictionary -->
 		<ResourceDictionary>
 			<Color x:Key="BackMainFaded">#ececec</Color>
+      <Color x:Key="BackMainLight">#ffffff</Color>
       <Color x:Key="GreenCta">#469228</Color>
       <Color x:Key="Light">#ffffff</Color>
       <Color x:Key="Dark">#000000</Color>
