@@ -14,7 +14,7 @@
         
         <!-- ReSharper disable once Xaml.MissingGridIndex -->
         <Label x:Name="TextLabel"
-               TextColor="Black"
+               TextColor="{StaticResource Dark}"
                FontSize="16"
                Margin="{Binding TextMargin, Source={x:Reference ThisControl}}"
                Text="{Binding Text, Source={x:Reference ThisControl}}" />

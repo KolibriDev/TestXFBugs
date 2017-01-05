@@ -5,7 +5,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <StackLayout Spacing="12">
-        <Grid Margin="16,40,16,0" RowSpacing="3">
+        <Grid Margin="16,40,16,0"
+              RowSpacing="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -15,8 +16,8 @@
             </Grid.ColumnDefinitions>
             <Label
                 HeightRequest="23"
-				TextColor="Black"
-				FontSize="14"
+                TextColor="{StaticResource Dark}"
+                FontSize="14"
                 Text="User name" />
             <Entry
                 x:Name="UsernameEntry"
@@ -24,12 +25,13 @@
                 Grid.Column="0"
                 Focused="OnEntryNameFocused"
                 HeightRequest="40"
-				TextColor="Black"
-				FontSize="18"
+                TextColor="{StaticResource Dark}"
+                FontSize="18"
                 Text="{Binding Username}"
                 Unfocused="OnEntryNameUnfocused" />
         </Grid>
-        <Grid Margin="16,0" RowSpacing="3">
+        <Grid Margin="16,0"
+              RowSpacing="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -39,8 +41,8 @@
             </Grid.ColumnDefinitions>
             <Label
                 HeightRequest="23"
-				TextColor="Black"
-				FontSize="14"
+                TextColor="{StaticResource Dark}"
+                FontSize="14"
                 Text="Password" />
             <Entry
                 Grid.Row="1"
@@ -48,8 +50,8 @@
                 Focused="OnEntryPassFocused"
                 HeightRequest="40"
                 IsPassword="true"
-				TextColor="Black"
-				FontSize="18"
+                TextColor="{StaticResource Dark}"
+                FontSize="18"
                 Text="{Binding Password}"
                 Unfocused="OnEntryPassUnfocused" />
         </Grid>
@@ -62,16 +64,16 @@
             </Grid.RowDefinitions>
             <Label
                 HeightRequest="23"
-				TextColor="Black"
-				FontSize="14"
-				Text="Auth" />
+                TextColor="{StaticResource Dark}"
+                FontSize="14"
+                Text="Auth#" />
             <Entry
                 Grid.Row="1"
                 Grid.Column="0"
                 Focused="OnEntryOtpFocused"
                 Keyboard="Numeric"
                 HeightRequest="40"
-                TextColor="Black"
+                TextColor="{StaticResource Dark}"
 				FontSize="18"
                 Text="{Binding OTP}"
                 Unfocused="OnEntryOtpUnfocused">
