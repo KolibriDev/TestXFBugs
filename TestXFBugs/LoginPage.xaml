@@ -17,21 +17,21 @@
   </ContentPage.Resources>
 
 	<StackLayout Spacing="0">
-		<ScrollView VerticalOptions="{Binding ScrollViewLayoutOptions}">
-			<StackLayout Spacing="0">
-				<ctrls:InfoTextBlock
+    <ScrollView VerticalOptions="{Binding ScrollViewLayoutOptions}">
+      <StackLayout Spacing="0">
+        <ctrls:InfoTextBlock
                         BackgroundColor="{StaticResource BackMainFaded}"
                         IsVisible="{Binding InfoVisible}"
                         Text="You need to authenticate yourself in order to use this app!"
                         TextMargin="{StaticResource TextMargin}" />
-				<ctrls:AuthenticationControl
-						IsKeyboardActive="{Binding IsKeyboardActive}"
-						OTP="{Binding OTP}"
+        <ctrls:AuthenticationControl
+            IsKeyboardActive="{Binding IsKeyboardActive}"
+            OTP="{Binding OTP}"
             Password="{Binding Password}"
             SmsBackupCommand="{Binding SmsBackupCommand}"
             Username="{Binding Username}" />
-			</StackLayout>
-		</ScrollView>
+      </StackLayout>
+    </ScrollView>
 		<Grid BackgroundColor="{StaticResource Light}"
           RowSpacing="0">
 	            <Grid.RowDefinitions>
