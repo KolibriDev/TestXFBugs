@@ -6,6 +6,7 @@ namespace TestXFBugs
 	{
 		public LoginPage()
 		{
+		    this.BindingContext = new LoginPageViewModel();
 			this.InitializeComponent();
 		}
 	}

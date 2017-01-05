@@ -17,10 +17,11 @@
   </ContentPage.Resources>
 
 	<StackLayout Spacing="0">
-		<ScrollView VerticalOptions="StartAndExpand">
+		<ScrollView VerticalOptions="{Binding ScrollViewLayoutOptions}">
 			<StackLayout Spacing="0">
 				<ctrls:InfoTextBlock
                         BackgroundColor="{StaticResource BackMainFaded}"
+                        IsVisible="{Binding InfoVisible}"
                         Text="You need to authenticate yourself in order to use this app!"
                         TextMargin="{StaticResource TextMargin}" />
 				<ctrls:AuthenticationControl
