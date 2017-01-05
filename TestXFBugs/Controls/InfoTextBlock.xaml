@@ -5,32 +5,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:TestXFBugs.Controls;assembly=TestXFBugs">
     <Grid x:Name="MyGrid"
-          ColumnSpacing="0"
           RowSpacing="0">
         <!--  Root  -->
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding ControlHeight, Source={x:Reference ThisControl}}"/>
             <RowDefinition Height="{Binding BottomLineHeight, Source={x:Reference ThisControl}}"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="{Binding IconColumnWidth, Source={x:Reference ThisControl}}" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <Label FontSize="{Binding IconFontSize, Source={x:Reference ThisControl}}"
-               Margin="{Binding IconMargin, Source={x:Reference ThisControl}}"
-               Style="{StaticResource InfoIconText}"
-               Text="{Binding Icon, Source={x:Reference ThisControl}}" />
-
+        
         <!-- ReSharper disable once Xaml.MissingGridIndex -->
-        <Label Grid.Column="1"
-				x:Name="TextLabel"
-				TextColor="Black"
-				FontSize="16"
-              	Margin="{Binding TextMargin, Source={x:Reference ThisControl}}"
-				Text="{Binding Text, Source={x:Reference ThisControl}}" />
+        <Label x:Name="TextLabel"
+               TextColor="Black"
+               FontSize="16"
+               Margin="{Binding TextMargin, Source={x:Reference ThisControl}}"
+               Text="{Binding Text, Source={x:Reference ThisControl}}" />
         <!-- ReSharper disable once Xaml.MissingGridIndex -->
-        <controls:SeparatorControl Grid.Row="1"
-                                   Grid.ColumnSpan="2"/>
+        <controls:SeparatorControl Grid.Row="1" />
     </Grid>
 </ContentView>

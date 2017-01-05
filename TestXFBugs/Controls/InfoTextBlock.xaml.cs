@@ -42,21 +42,6 @@
 		/// <summary>
 		/// The icon property
 		/// </summary>
-		public static BindableProperty IconProperty = BindableProperty.Create(
-			"Icon",
-			typeof(string),
-			typeof(InfoTextBlock),
-			string.Empty,
-			BindingMode.TwoWay,
-			propertyChanging: (bindable, oldValue, newValue) =>
-			{
-				var ctrl = (InfoTextBlock)bindable;
-				ctrl.Icon = (string)newValue;
-			});
-
-		/// <summary>
-		/// The icon property
-		/// </summary>
 		public static BindableProperty FormattedTextProperty = BindableProperty.Create(
 			"FormattedTextProperty",
 			typeof(FormattedString),
@@ -76,7 +61,7 @@
 			"TextMarginProperty",
 			typeof(Thickness),
 			typeof(InfoTextBlock),
-			new Thickness(0,38),
+			new Thickness(20,38),
 			BindingMode.TwoWay,
 			propertyChanging: (bindable, oldValue, newValue) =>
 			{
@@ -84,72 +69,27 @@
 				ctrl.TextMargin = (Thickness)newValue;
 			});
 
-		/// <summary>
-		/// The margin icon property
-		/// </summary>
-		public static BindableProperty IconMarginProperty = BindableProperty.Create(
-			"IconMarginProperty",
-			typeof(Thickness),
-			typeof(InfoTextBlock),
-			new Thickness(29, 46),
-			BindingMode.TwoWay,
-			propertyChanging: (bindable, oldValue, newValue) =>
-			{
-				var ctrl = (InfoTextBlock)bindable;
-				ctrl.IconMargin = (Thickness)newValue;
-			});
-
-		/// <summary>
-		/// The margin icon property
-		/// </summary>
-		public static BindableProperty IconFontSizeProperty = BindableProperty.Create(
-			"IconFontSizeProperty",
-			typeof(double),
-			typeof(InfoTextBlock),
-			(double)47,
-			BindingMode.TwoWay,
-			propertyChanging: (bindable, oldValue, newValue) =>
-			{
-				var ctrl = (InfoTextBlock)bindable;
-				ctrl.IconFontSize = (double)newValue;
-			});
-
-		/// <summary>
-		/// The icon column width property
-		/// </summary>
-		public static BindableProperty IconColumnWidthProperty = BindableProperty.Create(
-			"IconColumnWidthProperty",
-			typeof(GridLength),
-			typeof(InfoTextBlock),
-			default(GridLength),
-			BindingMode.TwoWay,
-			propertyChanging: (bindable, oldValue, newValue) =>
-			{
-				var ctrl = (InfoTextBlock)bindable;
-				ctrl.IconColumnWidth = (GridLength)newValue;
-			});
-
-		/// <summary>
-		/// The icon column width property
-		/// </summary>
-		public static BindableProperty IsBottomLineProperty = BindableProperty.Create(
-			"IsBottomLine",
-			typeof(bool),
-			typeof(InfoTextBlock),
-			true,
-			BindingMode.TwoWay,
-			propertyChanging: (bindable, oldValue, newValue) =>
-			{
-				var ctrl = (InfoTextBlock)bindable;
-				ctrl.IsBottomLine = (bool)newValue;
-			});
+        /// <summary>
+        /// The icon column width property
+        /// </summary>
+        public static BindableProperty IsBottomLineProperty = BindableProperty.Create(
+            "IsBottomLine",
+            typeof(bool),
+            typeof(InfoTextBlock),
+            true,
+            BindingMode.TwoWay,
+            propertyChanging: (bindable, oldValue, newValue) =>
+            {
+                var ctrl = (InfoTextBlock)bindable;
+                ctrl.IsBottomLine = (bool)newValue;
+            });
 
 #pragma warning restore SA1401 // Fields must be private
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="InfoTextBlock"/> class.
-		/// </summary>
-		public InfoTextBlock()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InfoTextBlock"/> class.
+        /// </summary>
+        public InfoTextBlock()
 		{
 			this.InitializeComponent();
 		}
@@ -198,25 +138,6 @@
 		}
 
 		/// <summary>
-		/// Gets or sets the icon.
-		/// </summary>
-		/// <value>
-		/// The icon .
-		/// </value>
-		public string Icon
-		{
-			get
-			{
-				return (string)this.GetValue(IconProperty);
-			}
-
-			set
-			{
-				this.SetValue(IconProperty, value);
-			}
-		}
-
-		/// <summary>
 		/// Gets or sets the formatted text
 		/// </summary>
 		public FormattedString FormattedText
@@ -254,61 +175,8 @@
 			}
 		}
 
-		/// <summary>
-		/// Gets or sets the icon margin.
-		/// </summary>
-		/// <value>
-		/// The icon margin .
-		/// </value>
-		public Thickness IconMargin
-		{
-			get { return (Thickness)this.GetValue(IconMarginProperty); }
 
-			set { this.SetValue(IconMarginProperty, value); }
-		}
 
-		/// <summary>
-		/// Gets or sets the icon font size.
-		/// </summary>
-		/// <value>
-		/// The icon font size .
-		/// </value>
-		public double IconFontSize
-		{
-			get
-			{
-				return (double)this.GetValue(IconFontSizeProperty);
-			}
-
-			set
-			{
-				this.SetValue(IconFontSizeProperty, value);
-			}
-		}
-
-		/// <summary>
-		/// Gets or sets the icon column width.
-		/// </summary>
-		/// <value>
-		/// The icon column width .
-		/// </value>
-		public GridLength IconColumnWidth
-		{
-			get
-			{
-				return (GridLength)this.GetValue(IconColumnWidthProperty);
-			}
-
-			set
-			{
-				if (this.IconColumnWidth.Value < value.Value + 0.5 && this.IconColumnWidth.Value > value.Value - 0.5)
-				{
-					return;
-				}
-
-				this.SetValue(IconColumnWidthProperty, value);
-			}
-		}
 
 		/// <summary>
 		/// Gets or sets a value indicating whether there is bottom line.

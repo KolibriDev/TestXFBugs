@@ -6,50 +6,35 @@
 		x:Class="TestXFBugs.LoginPage">
 
 	<ContentPage.Resources>
-        <ResourceDictionary>
-            <OnPlatform
-                x:Key="IconMargin"
-                x:TypeArguments="Thickness"
-                Android="22,32,0,0"
-                WinPhone="36,36,0,0"
-                iOS="25,46,0,0" />
-			<OnPlatform
+    <ResourceDictionary>
+      <OnPlatform
 					x:Key="TextMargin"
 					x:TypeArguments="Thickness"
-					Android="0,24,33,19"
-					iOS="0,38,54,33"
-					WinPhone="0,26,39,25" />
-            <OnPlatform
-                x:Key="IconColumnWidth"
-                x:TypeArguments="GridLength"
-                Android="122"
-                WinPhone="110"
-                iOS="118" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
+					Android="19,24,33,19"
+					iOS="33,38,54,33"
+					WinPhone="25,26,39,25" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
 
 	<StackLayout Spacing="0">
 		<ScrollView VerticalOptions="StartAndExpand">
 			<StackLayout Spacing="0">
 				<ctrls:InfoTextBlock
                         BackgroundColor="{StaticResource BackMainFaded}"
-                        Icon="{StaticResource IconProfile}"
-                        IconColumnWidth="{StaticResource IconColumnWidth}"
-                        IconMargin="{StaticResource IconMargin}"
                         Text="You need to authenticate yourself in order to use this app!"
                         TextMargin="{StaticResource TextMargin}" />
 				<ctrls:AuthenticationControl
 						IsKeyboardActive="{Binding IsKeyboardActive}"
 						OTP="{Binding OTP}"
-		                Password="{Binding Password}"
-		                SmsBackupCommand="{Binding SmsBackupCommand}"
-		                Username="{Binding Username}" />
+            Password="{Binding Password}"
+            SmsBackupCommand="{Binding SmsBackupCommand}"
+            Username="{Binding Username}" />
 			</StackLayout>
 		</ScrollView>
 		<Grid BackgroundColor="White" RowSpacing="0">
 	            <Grid.RowDefinitions>
 	                <RowDefinition Height="Auto" />
-	                <RowDefinition Height="50" />
+	                <RowDefinition Height="80" />
 	            </Grid.RowDefinitions>
 	            <ctrls:SeparatorControl />
 	            <Button
