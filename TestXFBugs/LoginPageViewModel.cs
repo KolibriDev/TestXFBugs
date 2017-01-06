@@ -8,14 +8,61 @@ namespace TestXFBugs
     public class LoginPageViewModel : INotifyPropertyChanged
     {
         private bool _isKeyboardActive;
+        private string _userName;
+        private string _password;
+        private string _otp;
+
         private LayoutOptions _scrollViewLayoutOptions;
 
         public LoginPageViewModel()
         {
+            this.Username = string.Empty;
+            this.Password = string.Empty;
+            this.OTP = string.Empty;
+
             this.ScrollViewLayoutOptions = LayoutOptions.StartAndExpand;
         }
 
         public bool InfoVisible => !this.IsKeyboardActive;
+
+        public string Username {
+            get { return this._userName; }
+
+            set
+            {
+                this._userName = value;
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(IsLoginEnabled));
+            }
+        }
+
+        public string Password {
+            get { return this._password; }
+
+            set
+            {
+                this._password = value;
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(IsLoginEnabled));
+            }
+        }
+
+        public string OTP {
+            get { return this._otp; }
+
+            set
+            {
+                this._otp = value;
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(IsLoginEnabled));
+            }
+        }
+
+        public bool IsLoginEnabled
+            => this.Username.Length > 0 && 
+            this.Password.Length > 0 && 
+            this.OTP.Length > 0;
+
 
         public bool IsKeyboardActive
         {

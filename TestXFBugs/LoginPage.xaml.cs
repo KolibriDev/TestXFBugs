@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace TestXFBugs
 {
@@ -9,5 +10,10 @@ namespace TestXFBugs
 		    this.BindingContext = new LoginPageViewModel();
 			this.InitializeComponent();
 		}
+
+	    private void Button_OnClicked(object sender, EventArgs e)
+	    {
+	        this.Navigation.PushAsync(new PinPage());
+	    }
 	}
 }

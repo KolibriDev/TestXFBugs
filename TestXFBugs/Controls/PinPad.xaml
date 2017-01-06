@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="TestXFBugs.Controls.PinPad"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:TestXFBugs.Converters;assembly=TestXFBugs"
+    x:Name="PinPad">
+  <ContentView.Resources>
+    <ResourceDictionary>
+      <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+      <converters:NumberPadStyleConverter x:Key="NumberPadStyleConverter" />
+    </ResourceDictionary>
+  </ContentView.Resources>
+  <Grid
+      BackgroundColor="{StaticResource GreyLight}"
+      ColumnSpacing="0.5"
+      RowSpacing="0.5">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="75" />
+      <RowDefinition Height="75" />
+      <RowDefinition Height="75" />
+      <RowDefinition Height="75" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Button
+        Command="{Binding AddCharCommand}"
+        CommandParameter="1"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="1" />
+    <Button
+        Grid.Column="1"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="2"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="2" />
+    <Button
+        Grid.Column="2"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="3"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="3" />
+    <Button
+        Grid.Row="1"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="4"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="4" />
+    <Button
+        Grid.Row="1"
+        Grid.Column="1"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="5"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="5" />
+    <Button
+        Grid.Row="1"
+        Grid.Column="2"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="6"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="6" />
+    <Button
+        Grid.Row="2"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="7"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="7" />
+    <Button
+        Grid.Row="2"
+        Grid.Column="1"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="8"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="8" />
+    <Button
+        Grid.Row="2"
+        Grid.Column="2"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="9"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="9" />
+    <Button
+        Grid.Row="3"
+        IsEnabled="False"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text=" " />
+    <Button
+        Grid.Row="3"
+        Grid.Column="1"
+        Command="{Binding AddCharCommand}"
+        CommandParameter="0"
+        FontSize="24"
+        IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
+        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Text="0" />
+  </Grid>
+</ContentView>

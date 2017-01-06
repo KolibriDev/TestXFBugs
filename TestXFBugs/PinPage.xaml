@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="TestXFBugs.PinPage"
+                              xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:ctrls="clr-namespace:TestXFBugs.Controls;assembly=TestXFBugs"
+                              x:Name="ThisPage"
+                              Title="Pin Number">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform x:Key="TextMargin"
+                  x:TypeArguments="Thickness"
+                  Android="19,56,28,19"
+                  WinPhone="25,64,28,25"
+                  iOS="33,63,28,33" />
+      </ResourceDictionary>
+  </ContentPage.Resources>
+  <StackLayout BackgroundColor="{StaticResource PageBackgroundColor}"
+               Spacing="0"
+               VerticalOptions="FillAndExpand">
+    <ctrls:InfoTextBlock IsBottomLine="False"
+                             Text="Please enter PIN"
+                             TextMargin="{StaticResource TextMargin}" />
+    <ctrls:PinPad VerticalOptions="EndAndExpand" />
+  </StackLayout>
+</ContentPage>
