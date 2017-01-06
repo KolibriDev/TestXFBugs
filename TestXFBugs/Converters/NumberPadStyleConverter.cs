@@ -13,7 +13,7 @@ namespace TestXFBugs.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var val = (bool) value;
-            return val
+            return !val
                 ? Application.Current.Resources["WhiteButton"]
                 : Application.Current.Resources["WhiteButtonDisabled"];
         }
