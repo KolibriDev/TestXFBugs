@@ -17,7 +17,6 @@ namespace TestXFBugs
         {
             this.BindingContext = new TransferConfirmedPageViewModel();
             this.InitializeComponent();
-            this.SetUpEntry();
         }
 
         private void SwitchLayerTapped(object sender, EventArgs e)
@@ -52,15 +51,6 @@ namespace TestXFBugs
         {
             var vm = (TransferConfirmedPageViewModel)this.BindingContext;
             vm.IsOtherSelected = true;
-        }
-
-        private void SetUpEntry()
-        {
-            this.OtherEntry.Focused += async (sender, args) =>
-            {
-                await Task.Delay(95);
-                await this.ModalScrollView.ScrollToAsync(this.ModalContentView, ScrollToPosition.End, false);
-            };
         }
     }
 }

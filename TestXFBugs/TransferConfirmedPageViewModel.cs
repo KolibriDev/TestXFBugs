@@ -19,6 +19,7 @@ namespace TestXFBugs
         {
             this.SendReceiptCommand = new Command(this.SendReceiptToRecipient);
             this.TransferAmount = 500;
+            this.OtherInfo = string.Empty;
             this.IsOtherSelected = true;
             this.DatePerformedString = $"{DateTime.Today:dd.MM.yyyy}    kl. {DateTime.Now:HH:mm}";
             this.SetMargins();
