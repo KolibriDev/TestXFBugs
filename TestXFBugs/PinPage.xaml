@@ -4,7 +4,7 @@
                               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                               xmlns:ctrls="clr-namespace:TestXFBugs.Controls;assembly=TestXFBugs"
                               x:Name="ThisPage"
-                              Title="Pin Number">
+                              Title="Pin">
   <ContentPage.Resources>
     <ResourceDictionary>
       <OnPlatform x:Key="TextMargin"

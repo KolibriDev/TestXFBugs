@@ -12,6 +12,8 @@ namespace TestXFBugs
 {
     public class PinPageViewModel : INotifyPropertyChanged
     {
+        private const int PinLength = 2;
+
         private bool _validatingPin;
         private string _pinString;
 
@@ -59,12 +61,12 @@ namespace TestXFBugs
                 throw new ArgumentException("PIN digit should be a number");
             }
 
-            if (this.PinString.Length < 4)
+            if (this.PinString.Length < PinLength)
             {
                 this.PinString += key;
             }
 
-            if (this.PinString.Length == 4)
+            if (this.PinString.Length == PinLength)
             {
                 this.ValidatingPin = true;
             }
