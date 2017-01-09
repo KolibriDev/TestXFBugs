@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestXFBugs.TransferConfirmedPage"
+             xmlns:controls="clr-namespace:TestXFBugs.Controls;assembly=TestXFBugs"
+             xmlns:constants="clr-namespace:TestXFBugs.Constants;assembly=TestXFBugs"
+             Title="Confirmation"
+             BackgroundColor="{StaticResource BackMainFaded}">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform
+          x:Key="MainTextAlignment"
+          x:TypeArguments="LayoutOptions"
+          Android="Fill"
+          WinPhone="End"
+          iOS="End" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <!--  Grid around whole page for layering  -->
+  <Grid>
+    <!--  First layer payment confirmation screen  -->
+    <ScrollView >
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ContentView Grid.Row="0">
+          <Grid
+              Margin="16, 32, 16, 16"
+              BackgroundColor="{StaticResource BackMainLight}"
+              RowSpacing="0">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="54" />
+              <RowDefinition Height="42" />
+              <RowDefinition Height="77" />
+              <RowDefinition Height="0.5" />
+              <RowDefinition Height="75" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="0.5" />
+              <RowDefinition Height="81" />
+            </Grid.RowDefinitions>
+
+            <!--  Grid Row 0  -->
+            <Label
+                HeightRequest="14"
+                HorizontalTextAlignment="Center"
+                LineBreakMode="NoWrap"
+                Style="{StaticResource XSmallFaded}"
+                Text="Transaction"
+                VerticalOptions="{StaticResource MainTextAlignment}"
+                VerticalTextAlignment="End" />
+
+            <!--  Grid Row 1  -->
+            <Label
+                Grid.Row="1"
+                HorizontalTextAlignment="Center"
+                LineBreakMode="NoWrap"
+                Style="{StaticResource Display3Dark}"
+                Text="{Binding TransferAmount, StringFormat='{0:n0} kr.'}"
+                VerticalOptions="{StaticResource MainTextAlignment}"
+                VerticalTextAlignment="End" />
+
+            <!--  Grid Row 2  -->
+            <Label  Grid.Row="2"
+                    Margin="0, 31, 0, 21"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource SmallDark}"
+                    Text="{Binding DatePerformedString}"
+                    VerticalOptions="Start" />
+
+            <!--  Grid Row 3  -->
+            <controls:SeparatorControl
+                Grid.Row="3"
+                Margin="40.5, 0, 40.5, 0"
+                HeightRequest="0.5" />
+
+            <!--  Grid Row 4  -->
+            <Grid
+                Grid.Row="4"
+                ColumnSpacing="0"
+                RowSpacing="4">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="37.5" />
+                <RowDefinition Height="37.5" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Label
+                  Margin="{Binding WithdrawalAccountNameMargin}"
+                  LineBreakMode="TailTruncation"
+                  Style="{StaticResource BodyStrongDark}"
+                  Text="Account1"
+                  VerticalOptions="End" />
+              <Image
+                  Grid.Row="0"
+                  Grid.RowSpan="2"
+                  Grid.Column="0"
+                  HeightRequest="9"
+                  HorizontalOptions="EndAndExpand"
+                  IsOpaque="True"
+                  Source="{x:Static constants:Filenames.IconArrow}"
+                  VerticalOptions="Center" />
+              <Label
+                  Grid.Row="0"
+                  Grid.Column="1"
+                  Margin="{Binding RecipientNameMargin}"
+                  LineBreakMode="TailTruncation"
+                  Style="{StaticResource BodyStrongDark}"
+                  Text="Account2"
+                  VerticalOptions="End" />
+              <Label
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Margin="{Binding WithdrawalAccountMargin}"
+                  LineBreakMode="TailTruncation"
+                  Style="{StaticResource SmallDark}"
+                  Text="0515-26-183105"
+                  VerticalOptions="Start" />
+              <Label
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="{Binding RecipientAccountMargin}"
+                  LineBreakMode="TailTruncation"
+                  Style="{StaticResource SmallDark}"
+                  Text="0526-26-000355"
+                  VerticalOptions="Start" />
+            </Grid>
+
+            <!--  Grid Row 5 - this row splits into two separate grids  -->
+
+            <!--  Grid Row 6  -->
+            <controls:SeparatorControl
+                Grid.Row="6"
+                HeightRequest="0.5"/>
+
+            <!--  Grid Row 7  -->
+            <Button
+                Grid.Row="7"
+                Margin="16"
+                Clicked="SwitchLayer"
+                HorizontalOptions="FillAndExpand"
+                Style="{StaticResource TransparentButtonWithBorder}"
+                Text="Send notification"
+                VerticalOptions="FillAndExpand" />
+          </Grid>
+        </ContentView>
+
+        <Image
+            Grid.Row="0"
+            Margin="0,16,0,0"
+            HeightRequest="40"
+            HorizontalOptions="Center"
+            IsOpaque="True"
+            Source="{x:Static constants:Filenames.GreenCheckMark}"
+            VerticalOptions="Start"
+            WidthRequest="40" />
+      </Grid>
+    </ScrollView>
+
+    <!--  Second layer, faded screen to get modal feel  -->
+    <controls:ModalShader IsEnabled="{Binding SendReceipt}" IsVisible="{Binding SendReceipt}" />
+    <!--  Third layer, send receipt screen  -->
+    <ContentView IsEnabled="{Binding SendReceipt}" IsVisible="{Binding SendReceipt}">
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ScrollView x:Name="ModalScrollView">
+          <!--  Grid row 0  -->
+          <ContentView x:Name="ModalContentView">
+            <ContentView.GestureRecognizers>
+              <TapGestureRecognizer Tapped="SwitchLayerTapped" />
+            </ContentView.GestureRecognizers>
+            <StackLayout
+                Padding="16"
+                BackgroundColor="Transparent"
+                Spacing="16"
+                VerticalOptions="Center">
+
+              <Grid
+                  x:Name="EntryGrid"
+                  BackgroundColor="{StaticResource BackMainLight}"
+                  ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="OnOtherTapped" />
+                </Grid.GestureRecognizers>
+                <!--  Grid column 0  -->
+                <!--  Grid column 1  -->
+                <Entry
+                    x:Name="OtherEntry"
+                    Grid.Column="1"
+                    Margin="0,20,16,20"
+                    Focused="OnOtherTapped"
+                    Placeholder="Phone or Email"
+                    Text="{Binding OtherInfo}"
+                    VerticalOptions="CenterAndExpand" />
+              </Grid>
+            </StackLayout>
+          </ContentView>
+        </ScrollView>
+        <!--  Grid row 1  -->
+        <ContentView
+            Grid.Row="1"
+            BackgroundColor="{StaticResource BackMainLight}"
+            VerticalOptions="End">
+          <Button
+              Margin="16"
+              Command="{Binding SendReceiptCommand}"
+              Style="{StaticResource GreenButton}"
+              Text="Send" />
+        </ContentView>
+      </Grid>
+    </ContentView>
+  </Grid>
+</ContentPage>

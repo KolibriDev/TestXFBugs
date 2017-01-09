@@ -12,16 +12,21 @@ namespace TestXFBugs
         private string _password;
         private string _otp;
 
+        private INavigation _navigation;
         private LayoutOptions _scrollViewLayoutOptions;
 
-        public LoginPageViewModel()
+        public LoginPageViewModel(INavigation navigation)
         {
+            this._navigation = navigation;
+            this.LoginCommand = new Command(this.Login);
             this.Username = string.Empty;
             this.Password = string.Empty;
             this.OTP = string.Empty;
 
             this.ScrollViewLayoutOptions = LayoutOptions.StartAndExpand;
         }
+
+        public Command LoginCommand { get; set; }
 
         public bool InfoVisible => !this.IsKeyboardActive;
 
@@ -97,6 +102,11 @@ namespace TestXFBugs
             {
                 this.ScrollViewLayoutOptions = LayoutOptions.StartAndExpand;
             }
+        }
+
+        private void Login()
+        {
+            this._navigation.PushAsync(new PinPage());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

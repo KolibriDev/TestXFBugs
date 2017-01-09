@@ -7,13 +7,8 @@ namespace TestXFBugs
 	{
 		public LoginPage()
 		{
-		    this.BindingContext = new LoginPageViewModel();
+		    this.BindingContext = new LoginPageViewModel(this.Navigation);
 			this.InitializeComponent();
 		}
-
-	    private void Button_OnClicked(object sender, EventArgs e)
-	    {
-	        this.Navigation.PushAsync(new PinPage());
-	    }
 	}
 }

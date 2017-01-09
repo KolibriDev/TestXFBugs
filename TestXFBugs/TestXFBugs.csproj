@@ -44,11 +44,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Constants\Filenames.cs" />
+    <Compile Include="Controls\ModalShader.cs" />
     <Compile Include="Controls\PinPad.xaml.cs">
       <DependentUpon>PinPad.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="Converters\NumberPadStyleConverter.cs" />
+    <Compile Include="IModalPage.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -68,6 +71,10 @@
     <Compile Include="Controls\InfoTextBlock.xaml.cs">
       <DependentUpon>InfoTextBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TransferConfirmedPage.xaml.cs">
+      <DependentUpon>TransferConfirmedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransferConfirmedPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -91,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\PinPad.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TransferConfirmedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

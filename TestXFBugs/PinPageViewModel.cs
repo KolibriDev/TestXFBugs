@@ -16,15 +16,21 @@ namespace TestXFBugs
 
         private bool _validatingPin;
         private string _pinString;
+        private INavigation _navigation;
 
-        public PinPageViewModel()
+        public PinPageViewModel(INavigation navigation)
         {
+            this._navigation = navigation;
+
             this.ValidatingPin = false;
             this.PinString = string.Empty;
             this.AddCharCommand = new Command<string>(this.AddChar);
+            this.ConfirmationCommand = new Command(this.Confirmation);
         }
 
         public Command<string> AddCharCommand { get; set; }
+
+        public Command ConfirmationCommand { get; set; }
 
         public bool ValidatingPin
         {
@@ -70,6 +76,11 @@ namespace TestXFBugs
             {
                 this.ValidatingPin = true;
             }
+        }
+
+        private void Confirmation()
+        {
+            this._navigation.PushAsync(new TransferConfirmedPage());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

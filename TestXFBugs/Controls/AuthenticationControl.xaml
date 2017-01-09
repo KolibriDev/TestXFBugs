@@ -16,7 +16,7 @@
             </Grid.ColumnDefinitions>
             <Label
                 HeightRequest="23"
-                TextColor="{StaticResource Dark}"
+                TextColor="{StaticResource TextDark}"
                 FontSize="14"
                 Text="User name" />
             <Entry
@@ -25,7 +25,7 @@
                 Grid.Column="0"
                 Focused="OnEntryNameFocused"
                 HeightRequest="40"
-                TextColor="{StaticResource Dark}"
+                TextColor="{StaticResource TextDark}"
                 FontSize="18"
                 Text="{Binding Username}"
                 Unfocused="OnEntryNameUnfocused" />
@@ -41,7 +41,7 @@
             </Grid.ColumnDefinitions>
             <Label
                 HeightRequest="23"
-                TextColor="{StaticResource Dark}"
+                TextColor="{StaticResource TextDark}"
                 FontSize="14"
                 Text="Password" />
             <Entry
@@ -50,7 +50,7 @@
                 Focused="OnEntryPassFocused"
                 HeightRequest="40"
                 IsPassword="true"
-                TextColor="{StaticResource Dark}"
+                TextColor="{StaticResource TextDark}"
                 FontSize="18"
                 Text="{Binding Password}"
                 Unfocused="OnEntryPassUnfocused" />
@@ -64,7 +64,7 @@
             </Grid.RowDefinitions>
             <Label
                 HeightRequest="23"
-                TextColor="{StaticResource Dark}"
+                TextColor="{StaticResource TextDark}"
                 FontSize="14"
                 Text="Auth#" />
             <Entry
@@ -73,7 +73,7 @@
                 Focused="OnEntryOtpFocused"
                 Keyboard="Numeric"
                 HeightRequest="40"
-                TextColor="{StaticResource Dark}"
+                TextColor="{StaticResource TextDark}"
 				FontSize="18"
                 Text="{Binding OTP}"
                 Unfocused="OnEntryOtpUnfocused">

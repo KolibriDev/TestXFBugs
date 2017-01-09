@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage x:Class="TestXFBugs.PinPage"
-                              xmlns="http://xamarin.com/schemas/2014/forms"
-                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                              xmlns:ctrls="clr-namespace:TestXFBugs.Controls;assembly=TestXFBugs"
-                              x:Name="ThisPage"
-                              Title="Pin">
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrls="clr-namespace:TestXFBugs.Controls;assembly=TestXFBugs"
+             x:Name="ThisPage"
+             Title="Pin">
   <ContentPage.Resources>
     <ResourceDictionary>
       <OnPlatform x:Key="TextMargin"
@@ -20,6 +20,11 @@
     <ctrls:InfoTextBlock IsBottomLine="False"
                              Text="Please enter PIN"
                              TextMargin="{StaticResource TextMargin}" />
+    <Button Command="{Binding ConfirmationCommand}"
+            HeightRequest="50"
+            Margin="16,16"
+            Text="Confirmation"
+            Style="{StaticResource GreenButton}"/>
     <ctrls:PinPad VerticalOptions="EndAndExpand" />
   </StackLayout>
 </ContentPage>

@@ -6,28 +6,67 @@
       <Color x:Key="PageBackgroundColor">#e6e6e6</Color>
 			<Color x:Key="BackMainFaded">#ececec</Color>
       <Color x:Key="BackMainLight">#ffffff</Color>
+      <Color x:Key="BackMainDark">#000000</Color>
       <Color x:Key="GreenCta">#469228</Color>
-      <Color x:Key="Faded">#737373</Color>
+      <Color x:Key="TextFaded">#737373</Color>
       <Color x:Key="GreyLight">#d8d8d8</Color>
-      <Color x:Key="Light">#ffffff</Color>
-      <Color x:Key="Dark">#000000</Color>
+      <Color x:Key="TextLight">#ffffff</Color>
+      <Color x:Key="TextDark">#000000</Color>
+
+      <Style x:Key="XSmallFaded" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TextFaded}" />
+        <Setter Property="FontSize" Value="12" />
+      </Style>
+
+      <Style x:Key="SmallDark" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TextDark}" />
+        <Setter Property="FontSize" Value="14" />
+      </Style>
+
+      <Style x:Key="BodyStrongDark" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TextDark}" />
+        <Setter Property="FontSize" Value="16" />
+      </Style>
+      
+      <Style x:Key="Display3Dark" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TextDark}" />
+        <Setter Property="FontSize" Value="24" />
+       </Style>
 
       <Style x:Key="GreenButton" TargetType="Button">
         <Setter Property="BackgroundColor" Value="{StaticResource GreenCta}" />
-        <Setter Property="TextColor" Value="{StaticResource Light}" />
+        <Setter Property="TextColor" Value="{StaticResource TextLight}" />
         <Setter Property="FontSize" Value="16" />
       </Style>
       
       <Style x:Key="WhiteButton" TargetType="Button">
         <Setter Property="BackgroundColor" Value="{StaticResource BackMainLight}" />
-        <Setter Property="TextColor" Value="{StaticResource Faded}" />
+        <Setter Property="TextColor" Value="{StaticResource TextFaded}" />
         <Setter Property="FontSize" Value="16" />
       </Style>
+      
       <Style x:Key="WhiteButtonDisabled" TargetType="Button">
         <Setter Property="BackgroundColor" Value="{StaticResource BackMainLight}" />
         <Setter Property="TextColor" Value="{StaticResource GreyLight}" />
         <Setter Property="FontSize" Value="16" />
       </Style>
-		</ResourceDictionary>
+
+      <Style x:Key="TransparentButtonWithBorder" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="{StaticResource GreyLight}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="TextColor" Value="{StaticResource TextFaded}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest">
+          <Setter.Value>
+            <OnPlatform x:TypeArguments="x:Double"
+                        Android="48"
+                        WinPhone="48"
+                        iOS="44" />
+          </Setter.Value>
+        </Setter>
+      </Style>
+
+    </ResourceDictionary>
 	</Application.Resources>
 </Application>
