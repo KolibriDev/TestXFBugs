@@ -14,6 +14,5 @@
 
 ### Setting Opacity causes crash
     
-    Xamarin.Forms 2.3.3.175: Navigate to the PinPage (by clicking to Login button on the LoginPage) and click the Confirmation button. On the next page (TransferConfirmedPage), click the Send notification button.  The following exception will occur: "Java.Lang.IllegalStateException: Unable to create layer for Platform_DefaultRenderer"
-   The TransferConfirmedPage uses the ModalShader class.  In the constructor of the ModalShader, comment out the statement 'this.Opacity = 0.6'. By doing so, the app does not crash.
-   Xamarin.Forms 2.3.2.127: This above exception does not occur.
+    Xamarin.Forms 2.3.3.175: Navigate to the PinPage (by clicking to Login button on the LoginPage) and click the Confirmation button. On the next page (TransferConfirmedPage), click the Send notification button.  The following exception will occur: "Java.Lang.IllegalStateException: Unable to create layer for Platform_DefaultRenderer”. The TransferConfirmedPage uses the ModalShader class.  In the constructor of the ModalShader, comment out the statement 'this.Opacity = 0.6'. By doing so, the app does not crash.
+    Xamarin.Forms 2.3.2.127: The above exception does not occur.
