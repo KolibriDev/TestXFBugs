@@ -12,6 +12,7 @@
       <Color x:Key="GreyLight">#d8d8d8</Color>
       <Color x:Key="TextLight">#ffffff</Color>
       <Color x:Key="TextDark">#000000</Color>
+      <Color x:Key="NumericButtonPressedColor">#BBBBBB</Color>
 
       <Style x:Key="XSmallFaded" TargetType="Label">
         <Setter Property="TextColor" Value="{StaticResource TextFaded}" />
@@ -38,7 +39,13 @@
         <Setter Property="TextColor" Value="{StaticResource TextLight}" />
         <Setter Property="FontSize" Value="16" />
       </Style>
-      
+
+      <Style x:Key="RedButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Red" />
+        <Setter Property="TextColor" Value="{StaticResource TextFaded}" />
+        <Setter Property="FontSize" Value="16" />
+      </Style>
+
       <Style x:Key="WhiteButton" TargetType="Button">
         <Setter Property="BackgroundColor" Value="{StaticResource BackMainLight}" />
         <Setter Property="TextColor" Value="{StaticResource TextFaded}" />

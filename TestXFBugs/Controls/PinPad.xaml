@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:TestXFBugs.Converters;assembly=TestXFBugs"
+    xmlns:testXfBugs="clr-namespace:TestXFBugs;assembly=TestXFBugs"
     x:Name="PinPad">
   <ContentView.Resources>
     <ResourceDictionary>
@@ -26,22 +27,22 @@
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
-    <Button
+    <testXfBugs:PinButton
         Command="{Binding AddCharCommand}"
         CommandParameter="1"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource WhiteButton}"
         Text="1" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Column="1"
         Command="{Binding AddCharCommand}"
         CommandParameter="2"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource WhiteButton}"
         Text="2" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Column="2"
         Command="{Binding AddCharCommand}"
         CommandParameter="3"
@@ -49,7 +50,7 @@
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
         Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
         Text="3" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Row="1"
         Command="{Binding AddCharCommand}"
         CommandParameter="4"
@@ -57,7 +58,7 @@
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
         Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
         Text="4" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Row="1"
         Grid.Column="1"
         Command="{Binding AddCharCommand}"
@@ -66,7 +67,7 @@
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
         Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
         Text="5" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Row="1"
         Grid.Column="2"
         Command="{Binding AddCharCommand}"
@@ -75,7 +76,7 @@
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
         Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
         Text="6" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Row="2"
         Command="{Binding AddCharCommand}"
         CommandParameter="7"
@@ -83,7 +84,7 @@
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
         Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
         Text="7" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Row="2"
         Grid.Column="1"
         Command="{Binding AddCharCommand}"
@@ -92,7 +93,7 @@
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
         Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
         Text="8" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Row="2"
         Grid.Column="2"
         Command="{Binding AddCharCommand}"
@@ -101,12 +102,12 @@
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
         Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
         Text="9" />
-    <Button
+    <testXfBugs:PinButton
         Grid.Row="3"
         IsEnabled="False"
         Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
         Text=" " />
-    <Button
+    <testXfBugs:PinButton
         Grid.Row="3"
         Grid.Column="1"
         Command="{Binding AddCharCommand}"
