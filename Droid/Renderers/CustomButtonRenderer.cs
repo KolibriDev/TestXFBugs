@@ -34,25 +34,9 @@ namespace TestXFBugs.Droid.Renderers
         /// <param name="pressedColor">The pressed color.</param>
         protected void SetButtonColors(Color enabledColor, Color disabledColor, Color checkedColor, Color pressedColor)
         {
-            int[][] states =
-            {
-                    new int[] { Android.Resource.Attribute.StateEnabled }, // enabled
-                    new int[] { -Android.Resource.Attribute.StateEnabled }, // disabled
-                    new int[] { Android.Resource.Attribute.StateChecked }, // checked
-                    new int[] { Android.Resource.Attribute.StatePressed } // pressed
-                };
-
-            // Using ColorStateList to change the background color of the button
-            int[] colors =
-            {
-                    enabledColor,
-                    disabledColor,
-                    enabledColor,
-                    pressedColor
-                };
-
             var btn = this.Control;
-            btn.BackgroundTintList = new ColorStateList(states, colors);
+            var colorStateList = this.CreateColorStateList(enabledColor, disabledColor, checkedColor, pressedColor);
+            btn.BackgroundTintList = colorStateList;
         }
 
         /// <summary>
@@ -64,50 +48,40 @@ namespace TestXFBugs.Droid.Renderers
         /// <param name="pressedColor">The pressed color.</param>
         protected void SetButtonTextColors(Color enabledColor, Color disabledColor, Color checkedColor, Color pressedColor)
         {
-            int[][] states =
-            {
-                    new int[] { Android.Resource.Attribute.StateEnabled }, // enabled
-                    new int[] { -Android.Resource.Attribute.StateEnabled }, // disabled
-                    new int[] { Android.Resource.Attribute.StateChecked }, // checked
-                    new int[] { Android.Resource.Attribute.StatePressed } // pressed
-                };
-
-            // Using ColorStateList to change the background color of the button
-            int[] colors =
-            {
-                    enabledColor,
-                    disabledColor,
-                    enabledColor,
-                    pressedColor
-                };
-
+           
             var btn = this.Control;
-            btn.SetTextColor(new ColorStateList(states, colors));
+            var colorStateList = this.CreateColorStateList(enabledColor, disabledColor, checkedColor, pressedColor);
+
+            btn.SetTextColor(colorStateList);
         }
 
         /// <summary>
-        /// Sets button resources.
+        /// Creates a color state list
         /// </summary>
-        /// <param name="upResId">Up resource id.</param>
-        /// <param name="downResId">Down resource id.</param>
-        protected void SetButtonResource(int upResId, int downResId)
+        /// <param name="enabledColor">The enabled color.</param>
+        /// <param name="disabledColor">The disabled color.</param>
+        /// <param name="checkedColor">The checked color.</param>
+        /// <param name="pressedColor">The pressed color.</param>
+        /// <returns>Color State List</returns>
+        private ColorStateList CreateColorStateList(Color enabledColor, Color disabledColor, Color checkedColor, Color pressedColor)
         {
-            var btn = this.Control;
-            btn.SetBackgroundResource(upResId);
-
-            btn.Touch += (s, me) =>
+            int[][] states =
             {
-                if (me.Event.Action == MotionEventActions.Down)
-                {
-                    btn.SetBackgroundResource(downResId);
-                }
-                else if (me.Event.Action == MotionEventActions.Up)
-                {
-                    btn.SetBackgroundResource(upResId);
-                }
-
-                me.Handled = false; // Because we still want the on click even to fire
+                new int[] { Android.Resource.Attribute.StateEnabled }, // enabled
+                new int[] { -Android.Resource.Attribute.StateEnabled }, // disabled
+                new int[] { Android.Resource.Attribute.StateChecked }, // checked
+                new int[] { Android.Resource.Attribute.StatePressed } // pressed
             };
+
+            int[] colors =
+            {
+                enabledColor,
+                disabledColor,
+                enabledColor,
+                pressedColor
+            };
+
+            return new ColorStateList(states, colors);
         }
 
         /// <summary>

@@ -12,7 +12,11 @@
       <Color x:Key="GreyLight">#d8d8d8</Color>
       <Color x:Key="TextLight">#ffffff</Color>
       <Color x:Key="TextDark">#000000</Color>
-      <Color x:Key="NumericButtonPressedColor">#BBBBBB</Color>
+
+      <Color x:Key="PinButtonEnabledColor">#ffffff</Color>
+      <Color x:Key="PinButtonDisabledColor">#BBBBBB</Color>
+      <Color x:Key="PinButtonEnabledTextColor">#737373</Color>
+      <Color x:Key="PinButtonDisabledTextColor">#d8d8d8</Color>
 
       <Style x:Key="XSmallFaded" TargetType="Label">
         <Setter Property="TextColor" Value="{StaticResource TextFaded}" />
@@ -40,24 +44,12 @@
         <Setter Property="FontSize" Value="16" />
       </Style>
 
-      <Style x:Key="RedButton" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Red" />
-        <Setter Property="TextColor" Value="{StaticResource TextFaded}" />
-        <Setter Property="FontSize" Value="16" />
-      </Style>
-
-      <Style x:Key="WhiteButton" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="{StaticResource BackMainLight}" />
-        <Setter Property="TextColor" Value="{StaticResource TextFaded}" />
+      <Style x:Key="PinButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource PinButtonEnabledColor}" />
+        <Setter Property="TextColor" Value="{StaticResource PinButtonEnabledTextColor}" />
         <Setter Property="FontSize" Value="16" />
       </Style>
       
-      <Style x:Key="WhiteButtonDisabled" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="{StaticResource BackMainLight}" />
-        <Setter Property="TextColor" Value="{StaticResource GreyLight}" />
-        <Setter Property="FontSize" Value="16" />
-      </Style>
-
       <Style x:Key="TransparentButtonWithBorder" TargetType="Button">
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="BorderColor" Value="{StaticResource GreyLight}" />

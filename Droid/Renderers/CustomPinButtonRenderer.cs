@@ -34,9 +34,8 @@ namespace TestXFBugs.Droid.Renderers
             this.SetBackgroundResource(Resource.Drawable.PinButton);
             this.SetFont(e.NewElement.FontFamily);
 
-
-            var enabledColor = ((Xamarin.Forms.Color) App.Current.Resources["TextFaded"]).ToAndroid();
-            var disabledColor = ((Xamarin.Forms.Color) App.Current.Resources["GreyLight"]).ToAndroid();
+            var enabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonEnabledTextColor"]).ToAndroid();
+            var disabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonDisabledTextColor"]).ToAndroid();
             
             this.SetButtonTextColors(enabledColor, disabledColor, enabledColor, enabledColor);
         }

@@ -50,7 +50,6 @@
       <DependentUpon>PinPad.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\InverseBooleanConverter.cs" />
-    <Compile Include="Converters\NumberPadStyleConverter.cs" />
     <Compile Include="IModalPage.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>

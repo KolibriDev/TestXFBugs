@@ -9,7 +9,6 @@
   <ContentView.Resources>
     <ResourceDictionary>
       <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
-      <converters:NumberPadStyleConverter x:Key="NumberPadStyleConverter" />
     </ResourceDictionary>
   </ContentView.Resources>
   <Grid
@@ -32,7 +31,7 @@
         CommandParameter="1"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{StaticResource WhiteButton}"
+        Style="{StaticResource PinButton}"
         Text="1" />
     <testXfBugs:PinButton
         Grid.Column="1"
@@ -40,7 +39,7 @@
         CommandParameter="2"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{StaticResource WhiteButton}"
+        Style="{StaticResource PinButton}"
         Text="2" />
     <testXfBugs:PinButton
         Grid.Column="2"
@@ -48,7 +47,7 @@
         CommandParameter="3"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text="3" />
     <testXfBugs:PinButton
         Grid.Row="1"
@@ -56,7 +55,7 @@
         CommandParameter="4"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text="4" />
     <testXfBugs:PinButton
         Grid.Row="1"
@@ -65,7 +64,7 @@
         CommandParameter="5"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text="5" />
     <testXfBugs:PinButton
         Grid.Row="1"
@@ -74,7 +73,7 @@
         CommandParameter="6"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text="6" />
     <testXfBugs:PinButton
         Grid.Row="2"
@@ -82,7 +81,7 @@
         CommandParameter="7"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text="7" />
     <testXfBugs:PinButton
         Grid.Row="2"
@@ -91,7 +90,7 @@
         CommandParameter="8"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text="8" />
     <testXfBugs:PinButton
         Grid.Row="2"
@@ -100,12 +99,12 @@
         CommandParameter="9"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text="9" />
     <testXfBugs:PinButton
         Grid.Row="3"
         IsEnabled="False"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text=" " />
     <testXfBugs:PinButton
         Grid.Row="3"
@@ -114,7 +113,7 @@
         CommandParameter="0"
         FontSize="24"
         IsEnabled="{Binding ValidatingPin, Converter={StaticResource InverseBooleanConverter}}"
-        Style="{Binding ValidatingPin, Converter={StaticResource NumberPadStyleConverter}}"
+        Style="{StaticResource PinButton}"
         Text="0" />
   </Grid>
 </ContentView>

@@ -31,6 +31,9 @@ namespace TestXFBugs.iOS.Renderers
             nativeButton.Layer.CornerRadius = 0; // No rounded corners
             nativeButton.ClipsToBounds = true;
 
+            nativeButton.SetTitleColor(((Color)Xamarin.Forms.Application.Current.Resources["PinButtonEnabledTextColor"]).ToUIColor(), UIControlState.Normal);
+            nativeButton.SetTitleColor(((Color)Xamarin.Forms.Application.Current.Resources["PinButtonDisabledTextColor"]).ToUIColor(), UIControlState.Disabled);
+
             var originalColor = nativeButton.BackgroundColor;
 
             // ReSharper disable once ImplicitlyCapturedClosure
@@ -38,7 +41,7 @@ namespace TestXFBugs.iOS.Renderers
             {
                 nativeButton.Alpha = .5f;
                 nativeButton.BackgroundColor =
-                    ((Color)Xamarin.Forms.Application.Current.Resources["NumericButtonPressedColor"]).ToUIColor();
+                    ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonDisabledColor"]).ToUIColor();
             };
             nativeButton.TouchUpInside += (sender, ea) =>
             {
