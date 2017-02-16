@@ -85,6 +85,31 @@ namespace TestXFBugs.Droid.Renderers
         }
 
         /// <summary>
+        /// Sets button resources.
+        /// </summary>
+        /// <param name="upResId">Up resource id.</param>
+        /// <param name="downResId">Down resource id.</param>
+        protected void SetButtonResource(int upResId, int downResId)
+        {
+            var btn = this.Control;
+            btn.SetBackgroundResource(upResId);
+
+            btn.Touch += (s, me) =>
+            {
+                if (me.Event.Action == MotionEventActions.Down && this.Element.StyleId != "PinButtonStyle")
+                {
+                    btn.SetBackgroundResource(downResId);
+                }
+                else if (me.Event.Action == MotionEventActions.Up)
+                {
+                    btn.SetBackgroundResource(upResId);
+                }
+
+                me.Handled = false; // Because we still want the on click even to fire
+            };
+        }
+
+        /// <summary>
         /// Sets font.
         /// </summary>
         /// <param name="fontFamily">The font family.</param>

@@ -31,17 +31,22 @@ namespace TestXFBugs.Droid.Renderers
                 return;
             }
 
+            var btn = this.Control;
+
+            btn.SetTextColor(Resources.GetColorStateList (Resource.Drawable.PinButtonTextColors));
+            
+            this.SetButtonResource(Droid.Resource.Drawable.PinButton, Droid.Resource.Drawable.PinButtonDown);
             this.SetFont(e.NewElement.FontFamily);
 
-            var enabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonEnabledColor"]).ToAndroid();
-            var pressedColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonPressedColor"]).ToAndroid();
+            //var enabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonEnabledColor"]).ToAndroid();
+            //var pressedColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonPressedColor"]).ToAndroid();
 
-            this.SetButtonColors(enabledColor, enabledColor, enabledColor, pressedColor);
+            //this.SetButtonColors(enabledColor, enabledColor, enabledColor, pressedColor);
 
-            enabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonEnabledTextColor"]).ToAndroid();
+            /*var enabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonEnabledTextColor"]).ToAndroid();
             var disabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonDisabledTextColor"]).ToAndroid();
             
-            this.SetButtonTextColors(enabledColor, disabledColor, enabledColor, enabledColor);
+            this.SetButtonTextColors(enabledColor, disabledColor, enabledColor, enabledColor);*/
         }
     }
 }
