@@ -14,7 +14,7 @@
       <Color x:Key="TextDark">#000000</Color>
 
       <Color x:Key="PinButtonEnabledColor">#ffffff</Color>
-      <Color x:Key="PinButtonDisabledColor">#BBBBBB</Color>
+      <Color x:Key="PinButtonPressedColor">#BBBBBB</Color>
       <Color x:Key="PinButtonEnabledTextColor">#737373</Color>
       <Color x:Key="PinButtonDisabledTextColor">#d8d8d8</Color>
 

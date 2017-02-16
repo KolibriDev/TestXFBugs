@@ -34,12 +34,12 @@ namespace TestXFBugs.Droid.Renderers
             this.SetFont(e.NewElement.FontFamily);
 
             var enabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonEnabledColor"]).ToAndroid();
-            var disabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonDisabledColor"]).ToAndroid();
+            var pressedColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonPressedColor"]).ToAndroid();
 
-            this.SetButtonColors(enabledColor, disabledColor, enabledColor, enabledColor);
+            this.SetButtonColors(enabledColor, enabledColor, enabledColor, pressedColor);
 
             enabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonEnabledTextColor"]).ToAndroid();
-            disabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonDisabledTextColor"]).ToAndroid();
+            var disabledColor = ((Color)Xamarin.Forms.Application.Current.Resources["PinButtonDisabledTextColor"]).ToAndroid();
             
             this.SetButtonTextColors(enabledColor, disabledColor, enabledColor, enabledColor);
         }
