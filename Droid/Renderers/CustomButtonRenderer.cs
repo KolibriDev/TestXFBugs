@@ -77,7 +77,7 @@ namespace TestXFBugs.Droid.Renderers
             {
                 enabledColor,
                 disabledColor,
-                enabledColor,
+                checkedColor,
                 pressedColor
             };
 
